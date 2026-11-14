@@ -1,0 +1,20 @@
+name: Deploy Application
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to deploy'
+        required: true
+        default: 'latest'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate Deployment
+        run: |
+          echo "🚀 Starting deployment for version: ${{ github.event.inputs.version }}"
+          echo "⏳ Building and testing..."
+          sleep 5
+          echo "✅ Deployment successful!"
